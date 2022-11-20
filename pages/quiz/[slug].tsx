@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router';
 
 import { Header } from '../../components';
-import { getQuizzes, getQuizDetails} from '../../services';
+import { getQuizzes, getQuizDetails, Loader } from '../../services';
 import Link from 'next/link'
  
 const QuizDetails = ({ quiz }: any) => {
+  const router = useRouter();
+  if (router.isFallback) {
+      return <Loader />
+  }
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOptions, setSelectedOptions] = useState([] as any);
   const [score, setScore] = useState(0);
@@ -188,6 +194,6 @@ export async function getStaticPaths() {
 
     return {
         paths: quizzes.map(({ node: { slug }}: any) => ({ params: { slug }})),
-        fallback: false,
+        fallback: true,
     }
 }
