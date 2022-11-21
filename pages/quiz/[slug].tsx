@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/router';
 
-import { Header } from '../../components';
-import { getQuizzes, getQuizDetails, Loader } from '../../services';
+import { Header, Loader } from '../../components';
+import { getQuizzes, getQuizDetails } from '../../services';
 import Link from 'next/link'
  
 const QuizDetails = ({ quiz }: any) => {
@@ -159,7 +159,7 @@ const QuizDetails = ({ quiz }: any) => {
                 <div className="flex h-20 px-5 justify-start items-start mb-10 lg:hidden">
                   <img 
                     src={quiz.questions[currentQuestion].graphic.url} 
-                    alt={quiz.questions[currentQuestion].slug}
+                    alt={quiz.questions[currentQuestion].question}
                     className='h-20'
                   />
                 </div>
@@ -168,7 +168,7 @@ const QuizDetails = ({ quiz }: any) => {
               <div className="hidden lg:visible lg:flex h-[80%] justify-center items-center">
                   <img 
                     src={quiz.questions[currentQuestion].graphic.url} 
-                    alt={quiz.questions[currentQuestion].slug}
+                    alt={quiz.questions[currentQuestion].question}
                     className='h-[80%]'
                   />
                </div>
