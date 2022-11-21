@@ -2,7 +2,6 @@ import React from 'react'
 import momemnt from 'moment'
 import Link from 'next/link'
 import { PossibleTypeExtensionsRule } from 'graphql';
-import moment from 'moment';
 
 const QuizCard = ({ quiz }) => {
   return (

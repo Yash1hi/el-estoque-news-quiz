@@ -55,13 +55,11 @@ const QuizDetails = ({ quiz }: any) => {
     setScore(newScore);
     setShowScore(true);
   };
-  const mainColor = quiz.mainColor.hex;
   return (
     <div className={showScore ? 
       (`flex flex-col w-screen items-end bg-black bg-no-repeat bg-cover bg-center bg-fixed h-screen overflow-hidden`) :  // HAVE TO ADD IN FEATURED IMAGE 
       (`flex flex-col w-screen h-screen overflow-hidden`)} style={{ backgroundColor: `${quiz.mainColor.hex}`}} >
-        <Header></Header>
-        <style jsx>
+          <style jsx>
               {`
                 input[type="radio"]:after {
                   width: 24px;
