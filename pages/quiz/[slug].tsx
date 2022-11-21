@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Header, Loader } from '../../components';
 import { getQuizzes, getQuizDetails } from '../../services';
 import Link from 'next/link'
+
  
 const QuizDetails = ({ quiz }: any) => {
   const router = useRouter();
@@ -60,6 +61,7 @@ const QuizDetails = ({ quiz }: any) => {
     <div className={showScore ? 
       (`flex flex-col w-screen items-end bg-black bg-no-repeat bg-cover bg-center bg-fixed h-screen overflow-hidden`) :  // HAVE TO ADD IN FEATURED IMAGE 
       (`flex flex-col w-screen h-screen overflow-hidden`)} style={{ backgroundColor: `${quiz.mainColor.hex}`}} >
+        
         <Header></Header>
         <style jsx>
               {`
