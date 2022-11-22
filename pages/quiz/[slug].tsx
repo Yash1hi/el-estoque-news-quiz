@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Head from 'next/head'
 import { useRouter } from 'next/router';
 
 import { Header, Loader } from '../../components';
@@ -61,7 +62,10 @@ const QuizDetails = ({ quiz }: any) => {
     <div className={showScore ? 
       (`flex flex-col w-screen items-end bg-black bg-no-repeat bg-cover bg-center bg-fixed h-screen overflow-hidden`) :  // HAVE TO ADD IN FEATURED IMAGE 
       (`flex flex-col w-screen h-screen overflow-hidden`)} style={{ backgroundColor: `${quiz.mainColor.hex}`}} >
-        
+        <Head>
+          <title>{ quiz.title }</title>
+          <link rel="icon" href={`${quiz.featuredImage.url}`} />
+        </Head>
         <Header></Header>
         <style jsx>
               {`
