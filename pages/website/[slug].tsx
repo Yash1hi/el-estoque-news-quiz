@@ -188,12 +188,17 @@ const QuizDetails = ({ quiz }: any) => {
                 >
                   {currentQuestion + 1 === quiz.questions.length ? "Submit" : "Check"}
                 </button>
-                <div className="flex h-20 px-5 justify-start items-start mb-10 lg:hidden">
+                <div className="relative px-5 justify-start items-start mb-10 lg:hidden">
                   <img 
                     src={quiz.questions[currentQuestion].graphic.url} 
                     alt={quiz.questions[currentQuestion].question}
-                    className='h-20'
+                    className='h-80'
                   />
+                  {quiz.graphicsAuthors.map((author : any) => (
+                    <p className={`text-sm justify-self-end absolute`} style={{ color: `${quiz.lighterColor.hex}`}}>
+                      {author.name}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>

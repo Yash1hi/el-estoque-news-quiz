@@ -38,6 +38,13 @@ export const getQuizzes = async () => {
                   url
                 }
               }
+              graphicsAuthors {
+                ... on Author {
+                  id
+                  name
+                }
+                name
+              }
             }
           }
         }
@@ -83,6 +90,13 @@ export const getQuizDetails = async (slug) => {
                     graphic {
                         url
                     }
+                }
+                graphicsAuthors {
+                  ... on Author {
+                    id
+                    name
+                  }
+                  name
                 }
             }
         }
