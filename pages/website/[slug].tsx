@@ -192,7 +192,7 @@ const QuizDetails = ({ quiz }: any) => {
                   <img 
                     src={quiz.questions[currentQuestion].graphic.url} 
                     alt={quiz.questions[currentQuestion].question}
-                    className='h-80'
+                    className='h-40 md:h-80'
                   />
                   {quiz.graphicsAuthors.map((author : any) => (
                     <p className={`text-sm justify-self-end absolute`} style={{ color: `${quiz.lighterColor.hex}`}}>
