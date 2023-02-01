@@ -13,12 +13,13 @@ const QuizDetails = ({ quiz }: any) => {
   }
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOptions, setSelectedOptions] = useState([] as any);
+  const [selectedOptions, setSelectedOptions] = useState([{answerByUser: ""}] as any);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [showBlurb, setShowBlurb] = useState(false);
   
   const handleAnswerOption = (answer: any) => {
+    console.log({ answerByUser: answer })
     setSelectedOptions([
       (selectedOptions[currentQuestion] = { answerByUser: answer }),
     ]);
